@@ -5,7 +5,6 @@
     "heroSubtitle": "Wir verbinden Sie mit vertrauenswürdigen Fabriken und verwalten alles von der Beschaffung bis zur Logistik. Zuverlässig, schnell und profitabel.",
     "getAQuote": "Angebot erhalten",
     "products": "Produkte",
-
     "requestAQuote": "Angebot anfordern"
   },
   "Header": {
@@ -14,6 +13,7 @@
     "home": "Startseite",
     "product": "Produkt",
     "aboutUs": "Über uns",
+    "blog": "Blogs",
     "contact": "Kontakt",
     "dashboard": "Dashboard"
   }
