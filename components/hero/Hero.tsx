@@ -1,6 +1,8 @@
 "use client";
 
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -27,14 +29,16 @@ export function Hero() {
             </p>
 
             <div className="flex gap-3 items-center mt-8">
-              <Button className="flex items-center gap-2 text-white bg-linear-to-b from-black to-[#001E80]">
+              <Button className="flex items-center gap-2 text-white bg-linear-to-b from-black to-[#001E80]  hover:scale-[1.04] transition-all">
                 {t("getAQuote")}
-                <span className="bg-[#ff9d00] w-6 h-6 rounded-full flex items-center justify-center font-bold">
+                <span className="bg-[#ff9d00] w-6 h-6 rounded-full flex items-center justify-center font-bold ">
                   <MdOutlineArrowRightAlt color="white" size={20} />
                 </span>
               </Button>
 
-              <button>{t("products")}</button>
+              <button className="flex justify-center items-center gap-2 hover:scale-[1.04] transition-all">
+                {t("products")} <FaExternalLinkAlt size={12} />
+              </button>
             </div>
           </div>
 

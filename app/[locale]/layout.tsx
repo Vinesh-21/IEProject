@@ -36,7 +36,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           "antialiased bg-[#EAEEFE] min-h-screen"
         )}
       >
-        <Header />
         {children}
       </div>
     </NextIntlClientProvider>
