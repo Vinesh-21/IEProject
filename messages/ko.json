@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "goodsFromIndia": "인도산 상품",
+    "heroTitle": "더 스마트하게 소싱하고, 더 빠르게 배송하고, 더 크게 성장하세요.",
+    "heroSubtitle": "우리는 신뢰할 수 있는 공장과 귀하를 연결하고 소싱부터 물류까지 모든 것을 관리합니다. 신뢰할 수 있고 빠르며 수익성이 높습니다.",
+    "getAQuote": "견적 받기",
+    "products": "제품",
+
+    "requestAQuote": "견적 요청"
+  },
+  "Header": {
+    "Welcome": "House Of SiRa Exports에 오신 것을 환영합니다",
+    "requestAQuote": "견적 요청",
+    "home": "홈",
+    "product": "제품",
+    "aboutUs": "회사 소개",
+    "contact": "문의하기",
+    "dashboard": "대시보드"
+  }
+}

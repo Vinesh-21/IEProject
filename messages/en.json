@@ -1,5 +1,20 @@
 {
   "HomePage": {
-    "title": "Hello world!"
+    "goodsFromIndia": "Goods From India",
+    "heroTitle": "Source Smarter. Ship Faster. Grow Bigger.",
+    "heroSubtitle": "We connect you with trusted factories and manage everything from sourcing to logistics. Reliable, fast, and profitable.",
+    "getAQuote": "Get a quote",
+    "products": "Products",
+    "requestAQuote": "Request a quote"
+  },
+
+  "Header": {
+    "Welcome": "Welcome to House Of SiRa Exports",
+    "requestAQuote": "Request a quote",
+    "home": "Home",
+    "product": "Product",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "dashboard": "Dashboard"
   }
 }

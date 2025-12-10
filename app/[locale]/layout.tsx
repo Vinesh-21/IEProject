@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-// import "./globals.css";
+import ".././globals.css";
 import { cn } from "@/lib/utils";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
@@ -31,3 +31,4 @@ export default async function LocaleLayout({ children, params }: Props) {
     </html>
   );
 }
+// #f7f0e5

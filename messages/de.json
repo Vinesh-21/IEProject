@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "goodsFromIndia": "Waren aus Indien",
+    "heroTitle": "Intelligenter beschaffen. Schneller versenden. Größer wachsen.",
+    "heroSubtitle": "Wir verbinden Sie mit vertrauenswürdigen Fabriken und verwalten alles von der Beschaffung bis zur Logistik. Zuverlässig, schnell und profitabel.",
+    "getAQuote": "Angebot erhalten",
+    "products": "Produkte",
+
+    "requestAQuote": "Angebot anfordern"
+  },
+  "Header": {
+    "Welcome": "Willkommen bei House Of SiRa Exports",
+    "requestAQuote": "Angebot anfordern",
+    "home": "Startseite",
+    "product": "Produkt",
+    "aboutUs": "Über uns",
+    "contact": "Kontakt",
+    "dashboard": "Dashboard"
+  }
+}

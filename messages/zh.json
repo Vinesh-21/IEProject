@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "goodsFromIndia": "来自印度的商品",
+    "heroTitle": "更聪明采购。更快速运输。更大幅增长。",
+    "heroSubtitle": "我们将您与可信赖的工厂连接，并管理从采购到物流的所有环节。可靠、快速且盈利。",
+    "getAQuote": "获取报价",
+    "products": "产品",
+
+    "requestAQuote": "请求报价"
+  },
+  "Header": {
+    "Welcome": "欢迎来到 House Of SiRa Exports",
+    "requestAQuote": "请求报价",
+    "home": "首页",
+    "product": "产品",
+    "aboutUs": "关于我们",
+    "contact": "联系我们",
+    "dashboard": "控制面板"
+  }
+}

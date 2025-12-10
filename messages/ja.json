@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "goodsFromIndia": "インドからの製品",
+    "heroTitle": "より賢く調達。より速く出荷。より大きく成長。",
+    "heroSubtitle": "信頼できる工場とあなたをつなぎ、調達から物流まで全てを管理します。信頼性が高く、迅速で、利益を生みます。",
+    "getAQuote": "見積もりを取得",
+    "products": "製品",
+
+    "requestAQuote": "見積もりを依頼"
+  },
+  "Header": {
+    "Welcome": "House Of SiRa Exports へようこそ",
+    "requestAQuote": "見積もりを依頼",
+    "home": "ホーム",
+    "product": "製品",
+    "aboutUs": "私たちについて",
+    "contact": "お問い合わせ",
+    "dashboard": "ダッシュボード"
+  }
+}
