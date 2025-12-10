@@ -6,12 +6,15 @@ import { GiCargoCrate } from "react-icons/gi";
 import { MenuIcon, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
+import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -46,74 +49,68 @@ export function Header() {
         <GiCargoCrate className="size-4 md:size-5" />
       </div>
 
-      {/* NAV WRAPPER */}
+      {/* NAVIGATION */}
       <div className="py-5">
         <div className="container">
           <div className="flex justify-between items-center px-3">
             {/* LOGO */}
-            <Image
-              src="/logo.svg"
-              alt="House-OF-SiRa-Logo"
-              width={40}
-              height={40}
-            />
+            <Image src="/logo.svg" alt="Logo" width={40} height={40} />
 
-            {/* ---------------- MOBILE DROPDOWN ---------------- */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="md:hidden">
+            {/* ---------------- MOBILE MENU (POPOVER) ---------------- */}
+            <Popover>
+              <PopoverTrigger className="md:hidden">
                 <MenuIcon className="h-6 w-6" />
-              </DropdownMenuTrigger>
+              </PopoverTrigger>
 
-              <DropdownMenuContent align="end" className="w-52">
-                <DropdownMenuLabel className="font-semibold">
-                  Menu
-                </DropdownMenuLabel>
+              <PopoverContent
+                side="bottom"
+                align="end"
+                className="w-56 p-4 rounded-lg shadow-lg"
+              >
+                <div className="flex flex-col gap-3 text-[15px] text-black/80">
+                  {["home", "product", "aboutUs", "contact", "blog"].map(
+                    (item) => (
+                      <button
+                        key={item}
+                        onClick={() => router.push("#")}
+                        className="text-left hover:translate-x-1 transition"
+                      >
+                        {t(item)}
+                      </button>
+                    )
+                  )}
 
-                {["home", "product", "aboutUs", "contact", "blog"].map(
-                  (item) => (
-                    <DropdownMenuItem
-                      key={item}
-                      onClick={() => router.push("#")}
-                      className="text-[15px]"
-                    >
-                      {t(item)}
-                    </DropdownMenuItem>
-                  )
-                )}
-
-                <DropdownMenuItem onClick={() => router.push("#")}>
-                  {t("dashboard")}
-                </DropdownMenuItem>
-
-                <DropdownMenuSeparator />
-
-                <DropdownMenuLabel className="font-semibold">
-                  Language
-                </DropdownMenuLabel>
-
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => changeLanguage(lang.code)}
-                    className={
-                      currentLocale === lang.code
-                        ? "bg-black/10 font-semibold border border-black/20"
-                        : ""
-                    }
+                  <button
+                    onClick={() => router.push("#")}
+                    className="text-left hover:translate-x-1 transition"
                   >
-                    {lang.label}
-                  </DropdownMenuItem>
-                ))}
+                    {t("dashboard")}
+                  </button>
 
-                <DropdownMenuSeparator />
+                  {/* Language Selector */}
+                  <div className="border-t pt-3 mt-2">
+                    <p className="text-sm font-semibold mb-1">Language</p>
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`text-left w-full px-2 py-1 rounded transition ${
+                          currentLocale === lang.code
+                            ? "bg-black/10 font-semibold border border-black/20"
+                            : "hover:bg-gray-100"
+                        }`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </div>
 
-                <DropdownMenuItem className="justify-center">
-                  <Button className="w-full bg-black text-white">
+                  <Button className="w-full mt-3 bg-black text-white">
                     {t("requestAQuote")}
                   </Button>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </div>
+              </PopoverContent>
+            </Popover>
             {/* ------------------------------------------------ */}
 
             {/* DESKTOP NAV */}
@@ -150,11 +147,11 @@ export function Header() {
                     <DropdownMenuItem
                       key={lang.code}
                       onClick={() => changeLanguage(lang.code)}
-                      className={`cursor-pointer ${
+                      className={
                         currentLocale === lang.code
                           ? "font-semibold bg-black/10 border border-black/20"
                           : ""
-                      }`}
+                      }
                     >
                       {lang.label}
                     </DropdownMenuItem>
