@@ -17,7 +17,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { useRouter, usePathname } from "next/navigation";
-
+import Link from "next/link";
 export function Header() {
   const t = useTranslations("Header");
   const router = useRouter();
@@ -80,12 +80,12 @@ export function Header() {
                     )
                   )}
 
-                  <button
-                    onClick={() => router.push("#")}
+                  <Link
+                    href={"/dashboard"}
                     className="text-left hover:translate-x-1 transition"
                   >
                     {t("dashboard")}
-                  </button>
+                  </Link>
 
                   {/* Language Selector */}
                   <div className="border-t pt-3 mt-2">
@@ -116,18 +116,21 @@ export function Header() {
             {/* DESKTOP NAV */}
             <nav className="items-center gap-6 hidden md:flex text-black/60">
               {["home", "product", "aboutUs", "contact", "blog"].map((item) => (
-                <a
+                <Link
                   key={item}
                   href=""
                   className="transition-all hover:text-black hover:translate-x-1"
                 >
                   {t(item)}
-                </a>
+                </Link>
               ))}
 
-              <a className="transition-all hover:text-black hover:translate-x-1">
+              <Link
+                href={"/dashboard"}
+                className="text-left hover:translate-x-1 transition"
+              >
                 {t("dashboard")}
-              </a>
+              </Link>
 
               <Button className="tracking-tighter hover:scale-[1.02] transition">
                 {t("requestAQuote")}
