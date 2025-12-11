@@ -11,7 +11,7 @@ export function Hero() {
   const t = useTranslations("HomePage");
 
   return (
-    <section className="bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEFFE_100%)] overflow-x-clip">
+    <section className="bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEFFE_100%)] overflow-x-clip overflow-hidden max-h-screen">
       <div className="container px-3">
         <div className="md:flex ">
           {/* LEFT TEXT */}
@@ -43,13 +43,11 @@ export function Hero() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="md:w-1/2 relative flex justify-center md:justify-end mt-10 md:mt-0 select-none">
+          <div className="md:w-1/2 relative flex justify-center md:justify-end mt-10 md:mt-0 select-none overflow-hidden">
             <motion.img
               src="/orange-container.png"
               alt="container export"
-              width={650}
-              height={650}
-              className="w-[80%] md:w-[90%] lg:w-full object-contain "
+              className="w-[80%] md:w-[90%] lg:w-full object-contain h "
               animate={{
                 translateY: [-30, 30],
               }}

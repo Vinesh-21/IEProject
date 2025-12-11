@@ -23,6 +23,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
+import { Button } from "./ui/button";
 
 // Menu items WITHOUT locale prefix
 const rawItems = [

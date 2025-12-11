@@ -118,7 +118,7 @@ export function Header() {
               {["home", "product", "aboutUs", "contact", "blog"].map((item) => (
                 <Link
                   key={item}
-                  href=""
+                  href={item}
                   className="transition-all hover:text-black hover:translate-x-1"
                 >
                   {t(item)}
