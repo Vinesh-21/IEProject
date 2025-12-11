@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { GiCargoCrate } from "react-icons/gi";
@@ -23,7 +22,6 @@ export function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
-
   const languages = [
     { code: "en", label: "English" },
     { code: "ms", label: "Malay" },
@@ -34,13 +32,19 @@ export function Header() {
     { code: "ko", label: "Korean" },
     { code: "zh", label: "Chinese" },
   ];
-
+  const navKeys = ["home", "product", "aboutUs", "contact", "blog"] as const;
+  const navigationDict: Record<(typeof navKeys)[number], string> = {
+    home: "/",
+    product: "/product",
+    aboutUs: "/about-us",
+    contact: "/contact",
+    blog: "/blog",
+  };
   const changeLanguage = (locale: string) => {
     const segments = pathname.split("/");
     segments[1] = locale;
     router.push(segments.join("/"));
   };
-
   return (
     <header className="sticky top-0 backdrop-blur-sm z-50">
       {/* TOP BAR */}
@@ -48,20 +52,17 @@ export function Header() {
         <p>{t("Welcome")}</p>
         <GiCargoCrate className="size-4 md:size-5" />
       </div>
-
       {/* NAVIGATION */}
       <div className="py-5">
         <div className="container">
           <div className="flex justify-between items-center px-3">
             {/* LOGO */}
             <Image src="/logo.svg" alt="Logo" width={40} height={40} />
-
             {/* ---------------- MOBILE MENU (POPOVER) ---------------- */}
             <Popover>
               <PopoverTrigger className="md:hidden">
                 <MenuIcon className="h-6 w-6" />
               </PopoverTrigger>
-
               <PopoverContent
                 side="bottom"
                 align="end"
@@ -79,14 +80,12 @@ export function Header() {
                       </button>
                     )
                   )}
-
                   <Link
                     href={"/dashboard"}
                     className="text-left hover:translate-x-1 transition"
                   >
                     {t("dashboard")}
                   </Link>
-
                   {/* Language Selector */}
                   <div className="border-t pt-3 mt-2">
                     <p className="text-sm font-semibold mb-1">Language</p>
@@ -104,7 +103,6 @@ export function Header() {
                       </button>
                     ))}
                   </div>
-
                   <Button className="w-full mt-3 bg-black text-white">
                     {t("requestAQuote")}
                   </Button>
@@ -112,30 +110,26 @@ export function Header() {
               </PopoverContent>
             </Popover>
             {/* ------------------------------------------------ */}
-
             {/* DESKTOP NAV */}
             <nav className="items-center gap-6 hidden md:flex text-black/60">
-              {["home", "product", "aboutUs", "contact", "blog"].map((item) => (
+              {navKeys.map((item) => (
                 <Link
                   key={item}
-                  href={item}
+                  href={navigationDict[item]}
                   className="transition-all hover:text-black hover:translate-x-1"
                 >
                   {t(item)}
                 </Link>
               ))}
-
               <Link
                 href={"/dashboard"}
                 className="text-left hover:translate-x-1 transition"
               >
                 {t("dashboard")}
               </Link>
-
               <Button className="tracking-tighter hover:scale-[1.02] transition">
                 {t("requestAQuote")}
               </Button>
-
               {/* DESKTOP LANGUAGE SWITCHER */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -144,7 +138,6 @@ export function Header() {
                     {currentLocale.toUpperCase()}
                   </Button>
                 </DropdownMenuTrigger>
-
                 <DropdownMenuContent align="end" className="w-32">
                   {languages.map((lang) => (
                     <DropdownMenuItem
