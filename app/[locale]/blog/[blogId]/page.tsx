@@ -73,17 +73,25 @@ export default function BlogDetails() {
           </h2>
 
           <ul className="list-disc ml-6 space-y-2 text-blue-700">
-            {blog.blogReference.map((ref, idx) => (
-              <li key={idx}>
-                <a
-                  href={ref}
-                  target="_blank"
-                  className="hover:underline break-all"
-                >
-                  {ref}
-                </a>
-              </li>
-            ))}
+            {blog.blogReference.map((ref, idx) => {
+              const validUrl =
+                ref.startsWith("http://") || ref.startsWith("https://")
+                  ? ref
+                  : `https://${ref}`;
+
+              return (
+                <li key={idx}>
+                  <a
+                    href={validUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline break-all"
+                  >
+                    {ref}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
