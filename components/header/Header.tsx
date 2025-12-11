@@ -69,17 +69,15 @@ export function Header() {
                 className="w-56 p-4 rounded-lg shadow-lg"
               >
                 <div className="flex flex-col gap-3 text-[15px] text-black/80">
-                  {["home", "product", "aboutUs", "contact", "blog"].map(
-                    (item) => (
-                      <button
-                        key={item}
-                        onClick={() => router.push("#")}
-                        className="text-left hover:translate-x-1 transition"
-                      >
-                        {t(item)}
-                      </button>
-                    )
-                  )}
+                  {navKeys.map((item) => (
+                    <button
+                      key={item}
+                      onClick={() => router.push(navigationDict[item])}
+                      className="text-left hover:translate-x-1 transition"
+                    >
+                      {t(item)}
+                    </button>
+                  ))}
                   <Link
                     href={"/dashboard"}
                     className="text-left hover:translate-x-1 transition"
