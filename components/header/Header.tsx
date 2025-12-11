@@ -72,7 +72,7 @@ export function Header() {
                     (item) => (
                       <button
                         key={item}
-                        onClick={() => router.push("#")}
+                        onClick={() => router.push(item)}
                         className="text-left hover:translate-x-1 transition"
                       >
                         {t(item)}
